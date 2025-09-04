@@ -1,0 +1,54 @@
+<a [routerLink]="'/'">← Retour</a>
+
+<section *ngIf="property; else notfound">
+  <div class="gallery" *ngIf="property.pictures?.length; else coverOnly">
+    <img *ngFor="let pic of property.pictures" [src]="pic" alt="Photo logement" />
+  </div>
+  <ng-template #coverOnly>
+    <img *ngIf="property.cover" [src]="property.cover" alt="Photo logement" class="cover" />
+  </ng-template>
+
+  <h1>{{ property.title }}</h1>
+  <p class="location">{{ property.location }}</p>
+
+  <div class="meta">
+    <div class="host" *ngIf="property.host as host">
+      <span>{{ host.name }}</span>
+      <img *ngIf="host.picture" [src]="host.picture" alt="Hôte" />
+    </div>
+    <div class="rating" *ngIf="property.rating">Note: {{ property.rating }}</div>
+  </div>
+
+  <div class="tags" *ngIf="property.tags?.length">
+    <span class="tag" *ngFor="let t of property.tags">{{ t }}</span>
+  </div>
+
+  <div class="panels">
+    <section class="panel">
+      <button class="panel-header" (click)="isDescriptionOpen = !isDescriptionOpen">
+        <span>Description</span>
+        <span class="chevron" [class.open]="isDescriptionOpen">›</span>
+      </button>
+      <div class="panel-body" *ngIf="isDescriptionOpen">
+        <p>{{ property.description }}</p>
+      </div>
+    </section>
+    <section class="panel">
+      <button class="panel-header" (click)="isEquipmentsOpen = !isEquipmentsOpen">
+        <span>Équipements</span>
+        <span class="chevron" [class.open]="isEquipmentsOpen">›</span>
+      </button>
+      <div class="panel-body" *ngIf="isEquipmentsOpen">
+        <ul>
+          <li *ngFor="let e of property.equipments">{{ e }}</li>
+        </ul>
+      </div>
+    </section>
+  </div>
+</section>
+
+<ng-template #notfound>
+  <p>Logement introuvable.</p>
+</ng-template>
+
+

@@ -1,0 +1,14 @@
+<section class="hero">
+  <h1 class="hero-title"></h1>
+</section>
+
+<section class="about-cards">
+  <article class="about-card" *ngFor="let it of items; let i = index">
+    <button class="panel-header" (click)="toggle(i)">
+      <span>{{ it.title }}</span>
+      <span class="chevron" [class.open]="openIndex === i">›</span>
+    </button>
+    <div class="panel-body" *ngIf="openIndex === i">{{ it.content }}</div>
+  </article>
+  
+</section>

@@ -1,0 +1,97 @@
+.hero {
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 16px 8px;
+  background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+}
+
+.hero-title {
+  width: auto;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+  white-space: nowrap;
+}
+
+/* voile pour améliorer la lisibilité du titre */
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.hero-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.hero-nav.prev { left: 12px; }
+.hero-nav.next { right: 12px; }
+/* Grille 3x2 de cartes carrées */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
+
+.card {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  aspect-ratio: 1 / 1;
+  background: #ddd center/cover no-repeat;
+  border-radius: 8px;
+  text-decoration: none;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,0.6) 100%);
+}
+
+.card-title {
+  position: relative;
+  color: #fff;
+  font-weight: 600;
+  z-index: 1;
+}
+

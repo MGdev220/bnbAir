@@ -1,0 +1,82 @@
+.hero {
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.1);
+  padding: 16px 8px;
+  background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 210px;
+}
+
+.hero-title {
+  width: 344px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 700;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.25);
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1240px;
+  margin: 16px auto 0;
+}
+
+.about-card {
+  border-radius: 8px;
+  background: #ff6060; /* couleur du logo */
+  color: #fff;
+  padding: 20px;
+  font-weight: 600;
+}
+
+.panel-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ff6060;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.chevron {
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.chevron.open { transform: rotate(90deg); }
+
+.panel-body {
+  margin-top: 8px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: normal;
+  color: #333;
+}
+/* styles d'accordéon retirés */
+

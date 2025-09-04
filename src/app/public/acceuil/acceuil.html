@@ -1,0 +1,14 @@
+<section class="hero" [style.background-image]="'url(' + currentHero + ')'" (mouseenter)="startAuto()" (mouseleave)="stopAuto()">
+  <button class="hero-nav prev" (click)="prevHero()" aria-label="Image précédente">‹</button>
+  <h1 class="hero-title">Chez vous, partout et ailleurs</h1>
+  <button class="hero-nav next" (click)="nextHero()" aria-label="Image suivante">›</button>
+  <h2 hidden>Accueil</h2>
+  <h2 hidden>A Propos</h2>
+</section>
+
+<section class="grid">
+  <a class="card" *ngFor="let p of properties" [routerLink]="['/logement', p.id]" [style.background-image]="p.cover ? 'url(' + p.cover + ')' : ''" [attr.aria-label]="p.title">
+    <span class="card-title">{{ p.title }}</span>
+  </a>
+</section>
+

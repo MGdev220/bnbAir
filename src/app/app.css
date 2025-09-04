@@ -1,0 +1,107 @@
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.links a.active {
+  color: #ff6060;
+}
+
+.content {
+  box-sizing: border-box;
+  padding-top: 45px;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 1440px;
+  min-height: unset;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  opacity: 1;
+}
+
+/* Accueil layout */
+.hero {
+  background: #000;
+  color: #fff;
+  border-radius: 12px;
+  padding: 40px 24px;
+  margin: 16px 0 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 20px;
+}
+
+.footer {
+  text-align: center;
+  color: #666;
+  margin: 24px 0;
+}
+
+.site-footer {
+  margin-top: 16px;
+  padding: 24px 16px;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+  max-width: 1440px;
+  height: 209px;
+  opacity: 1;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
